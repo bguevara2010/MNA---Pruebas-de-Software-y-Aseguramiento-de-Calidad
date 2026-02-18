@@ -1,3 +1,5 @@
+"""Storage module."""
+
 import json
 import os
 
@@ -7,6 +9,7 @@ class Storage:
 
     @staticmethod
     def load(file_path: str) -> list:
+        """Load JSON data from a file."""
         if not os.path.exists(file_path):
             return []
 
@@ -19,6 +22,7 @@ class Storage:
 
     @staticmethod
     def save(file_path: str, data: list) -> None:
+        """Save data to a JSON file."""
         try:
             with open(file_path, "w", encoding="utf-8") as file:
                 json.dump(data, file, indent=4)
